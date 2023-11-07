@@ -11,6 +11,8 @@ Internally, vectors use a **dynamically allocated array** to store their element
 |empty    | O(1)|
 |size     | O(1)|
 |access   | O(1)|
+|front    | O(1)|
+|back     | O(1)|
 |push_back| O(1)|
 |pop_back | O(1)|
 |insert   | O(n)|
