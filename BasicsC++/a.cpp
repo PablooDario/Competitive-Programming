@@ -16,16 +16,25 @@ struct comp{
 
 int main()
 {
-    unordered_map <char,int> myMap={{'a', 4}, {'d', 1}};
-    myMap.insert({'z', 0});
-    myMap.emplace('a', 28);
-    myMap['p'] = 8; 
-    myMap['k']++; 
+    queue <int> q;
 
-    for(auto m : myMap)
-        cout<<"{"<<m.first<<", "<<m.second<<"} ";
-        // {'k', 1} {'a', 4} {'p', 8} {'z', 0} {'d', 1}
+    q.push(0);
+    q.push(8);
+    q.push(2);
+    q.push(9);
+    q.push(7);
+    q.push(11);
 
-    myMap.size(); //5
+    cout<< q.back(); // 11
+    cout<<'\n'<<q.front(); // 0
+    
+    q.pop(); // delete 0
+    cout<<"\nSize of queue: "<<q.size()<<'\n'; // 5
+
+    while(!q.empty()){
+        cout<<q.front()<<" "; // 8 2 9 7 11
+        q.pop();
+    }
+
     return 0;
 }
