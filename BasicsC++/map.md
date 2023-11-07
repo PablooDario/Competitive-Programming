@@ -134,6 +134,11 @@ In a multimap the accessing operators are no longer valid
     for(auto m : myMap)
         cout<<"{"<<m.first<<", "<<m.second<<"} ";
         // {'z', 0} {'z', 9} {'d', 1} {'c', 2} {'b', 3} {'a', 4} {'a', 28}
+    
+    myMap.erase('z'); //erase all the elements that have the 'z' as key
+    for(auto m : myMap)
+        cout<<"{"<<m.first<<", "<<m.second<<"} ";
+        // {'d', 1} {'c', 2} {'b', 3} {'a', 4} {'a', 28}
 ```
 
 ## Unordered_Map & Unordered_MultiMap
