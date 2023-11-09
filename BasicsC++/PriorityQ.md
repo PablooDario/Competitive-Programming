@@ -1,6 +1,20 @@
 ## Priority Queue
 
+```cpp
+template <class T, class Container = vector<T>,  class Compare = less<typename Container::value_type> > class priority_queue;
+```
+
 A C++ priority queue is a type of container adapter, specifically designed such that the first element of the queue is either the greatest or the smallest of all elements in the queue. In C++ STL, the top element is always the greatest by default. We can also change it to the smallest element at the top. Priority queues are built on the top of the max heap and use an array or vector as an internal structure. In simple terms, STL Priority Queue is the implementation of Heap Data Structure. It accpets duplicated elements
+
+**It doesn't have iterators**
+
+|Operation| Cost|
+|---      |---  |
+|empty    | O(1)|
+|size     | O(1)|
+|top      | O(1)|
+|push     | O(log n)|
+|pop      | O(log n)|
 
 **Priority Queue with the greatest element at the top**
 ```cpp
