@@ -21,4 +21,5 @@ This is an introductory part to know the background of how some Data Structures 
 - [Set](Set.md)
 - [Map](Map.md)
 - [BST](Trees.md)
-- [Heap and Priority Q](Heap&PriorityQ.md)
+- [Heap](Heap.md)
+- [Priority Q](PriorityQ.md)
