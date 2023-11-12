@@ -1,24 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct comparator{
-    bool operator()(const pair<char,int> &a, const pair<char,int> &b)const{
-        return a.second > b.second;
+int Sort(vector <int> &nums, int l, int r){
+    if(l >= r) return -1;
+    int idx = l - 1;
+    for(int i = l; i <= r; i++){
+        if(nums[i]<=nums[r]){
+            idx++;
+            if(i > idx) swap(nums[i], nums[idx]);
+        }
     }
-};
+    return idx;
+}
+
+void Quick(vector <int> &array, int l, int r){
+    int pos = Sort(array, l, r);
+    if(pos!=-1){
+        Quick(array, l, pos-1);
+        Quick(array, pos+1, r);
+    }
+}
 
 int main(){
-    priority_queue <pair<int,char>, vector<pair<int,char>>, comparator> pq;
-    pq.push({5, 'g'}); 
-    pq.push({1, 'p'});
-    pq.push({4, 'i'});
-    pq.push({2, 'f'});
-    pq.push({9, 'x'});
-
-    while(!pq.empty()){
-        cout<<"{"<<pq.top().first<<", "<<pq.top().second<<"} ";
-        pq.pop();
-    }
-
+    vector <int> nums = {3, 2, 5, 0, 1, 8, 7, 6, 9, 4};
+    cout<<"Original Vector-> ";
+    for(auto n : nums) cout<<n<<" ";
+    
+    cout<<"\nSorted Vector-> ";
+    Quick(nums, 0, nums.size()-1);
+    for(auto n : nums) cout<<n<<" ";
     return 0;
 }
